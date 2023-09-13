@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Cabecalho from './Cabecalho'
 import Celula from './Celula'
 import Rodape from './Rodape'
 import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import { Orientation } from '../App';
 
 // import './Jogo.css'
+
 const Jogo = () => {
+    
+    const isLandscape = useContext(Orientation);
 
     const [vezJogador, setVezJogador] = useState('x')
     const [estadoTabuleiro, setEstadoTabuleiro] = useState(Array(9).fill(null))
@@ -57,7 +61,7 @@ const Jogo = () => {
     }
 
     return (
-        <ScrollView style={styles.jogo}>
+        <View style={[styles.jogo, {flexDirection: isLandscape && 'row'}]}>
             <Cabecalho vez={vezJogador} />
             <View style={styles.tabuleiro}>
                 <View style={styles.linhaTabuleiro}>
@@ -77,7 +81,7 @@ const Jogo = () => {
                 </View>
             </View>
             <Rodape historico={historicoJogadas} voltarJogada={voltarJogada} />
-        </ScrollView>
+        </View>
     )
 }
 
@@ -97,7 +101,6 @@ const styles = StyleSheet.create({
     tabuleiro: {
         flexDirection: 'column',
         justifyContent: 'center',
-        borderWidth: 3,
 
     },
     linhaTabuleiro: {
