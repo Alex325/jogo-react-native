@@ -2,6 +2,7 @@ import React from 'react'
 import Jogada from './Jogada'
 // import './Rodape.css'
 import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView } from 'react-native-web';
 
 const Rodape = (props) => {
     const jogadas = props.historico.map(
@@ -11,7 +12,7 @@ const Rodape = (props) => {
     return (
         <View style={styles.rodape}>
             <Text style={styles.rodapeP}>Histórico de jogadas:</Text>
-            <View style={styles.historico}>{jogadas}</View>
+            <ScrollView contentContainerStyle={styles.historico}>{jogadas}</ScrollView>
         </View>
     )
 }
@@ -19,15 +20,20 @@ const Rodape = (props) => {
 const styles = StyleSheet.create({
     rodape: {
         margin: 10,
-        borderTop: 'solid 1 #000',
-        flex: 2,
-        flexDirection: 'row'
+        borderTopWidth: 1,
+        borderColor: 'black',
+        borderStyle: 'solid',
+        flexDirection: 'column',
+        flex: 4,
+        paddingTop: 20
+
     },
     rodapeP: {
-        marginLeft: 10,
+        marginBottom: 10,
     },
     historico: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        flexWrap: 'wrap'
     }
 });
 export default Rodape;

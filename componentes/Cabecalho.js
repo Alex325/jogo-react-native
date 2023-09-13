@@ -13,11 +13,16 @@ const Cabecalho = (props) => {
 const styles = StyleSheet.create({
     cabecalho: {
         margin: 10,
-        borderBottom: 'solid 1 #000',
-        flex: 2,
+        borderBottomWidth: 1,
+        borderColor: 'black',
+        borderStyle: 'solid',
+        flex: 1,
+        paddingBottom: 20
     },
     cabecalhoH1: {
         textAlign: 'center',
+        fontSize: 40,
+        marginBottom: 20
     },
     cabecalhoP: {
         marginLeft: 10,

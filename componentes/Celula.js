@@ -3,24 +3,29 @@ import { View, Text, TouchableHighlight, StyleSheet } from 'react-native';
 
 // import './Celula.css'
 const Celula = (props) => {
-    return (
-        <TouchableHighlight style={styles.celula} onPress={props.onPress}>
-            <Text>{props.valor}</Text>
-        </TouchableHighlight>
-    )
+  return (
+    <TouchableHighlight style={styles.celula} onPress={props.onPress}>
+      <Text style={styles.textCelula}>{props.valor}</Text>
+    </TouchableHighlight>
+  )
 }
 
 const styles = StyleSheet.create({
-    celula: {
-        backgroundColor: '#ffffff',
-        textAlign: 'center',
-        color: '#000',
-        fontSize: 2,
-        border: 'solid 1 #000',
-        height: 100,
-        width: 100,
-        justifyContent: 'center'
-    }
+  celula: {
+    backgroundColor: '#ffffff',
+    borderColor: 'black',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    flex: 1,
+    aspectRatio: 1,
+    alignItems: 'center',
+    justifyCenter: 'center'
+  },
+  textCelula: {
+    fontSize: 100,
+    textAlign: 'center',
+    color: '#000',
+  }
 });
 
 export default Celula
