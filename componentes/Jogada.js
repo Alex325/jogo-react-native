@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-// import './Jogada.css'
+
 const Jogada = (props) => {
   const jogada = props.jogada;
 

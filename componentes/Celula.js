@@ -1,7 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableHighlight, StyleSheet } from 'react-native';
 
-// import './Celula.css'
 const Celula = (props) => {
   return (
     <TouchableHighlight style={styles.celula} onPress={props.onPress}>

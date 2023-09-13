@@ -1,39 +1,42 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Jogada from './Jogada'
-// import './Rodape.css'
 import { View, Text, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-web';
+import { Orientation } from '../App';
 
 const Rodape = (props) => {
-    const jogadas = props.historico.map(
-        (jogada, ind) => <Jogada jogada={jogada} voltarJogada={() => props.voltarJogada(ind)} />
-    )
 
-    return (
-        <View style={styles.rodape}>
-            <Text style={styles.rodapeP}>Histórico de jogadas:</Text>
-            <ScrollView contentContainerStyle={styles.historico}>{jogadas}</ScrollView>
-        </View>
-    )
+  const isLandscape = useContext(Orientation);
+
+  const jogadas = props.historico.map(
+    (jogada, ind) => <Jogada jogada={jogada} voltarJogada={() => props.voltarJogada(ind)} />
+  )
+
+  return (
+    <View style={[styles.rodape, { borderTopWidth: isLandscape ? 0 : 1, borderLeftWidth: isLandscape ? 1 : 0}]}>
+      <Text style={[styles.rodapeP, { marginBottom: isLandscape ? 0 : 10, marginLeft: isLandscape ? 10 : 0}]}>Histórico de jogadas:</Text>
+      <ScrollView contentContainerStyle={styles.historico}>{jogadas}</ScrollView>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
-    rodape: {
-        margin: 10,
-        borderTopWidth: 1,
-        borderColor: 'black',
-        borderStyle: 'solid',
-        flexDirection: 'column',
-        flex: 4,
-        paddingTop: 20
+  rodape: {
+    margin: 10,
+    borderTopWidth: 1,
+    borderColor: 'black',
+    borderStyle: 'solid',
+    flexDirection: 'column',
+    flex: 1,
+    paddingTop: 20
 
-    },
-    rodapeP: {
-        marginBottom: 10,
-    },
-    historico: {
-        flexDirection: 'row',
-        flexWrap: 'wrap'
-    }
+  },
+  rodapeP: {
+    marginBottom: 10,
+  },
+  historico: {
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  }
 });
 export default Rodape;

@@ -5,8 +5,6 @@ import Rodape from './Rodape'
 import { View, Text, StyleSheet } from 'react-native';
 import { Orientation } from '../App';
 
-// import './Jogo.css'
-
 const Jogo = () => {
 
   const isLandscape = useContext(Orientation);
@@ -81,7 +79,7 @@ const Jogo = () => {
         </View>
       </View>
       <Rodape historico={historicoJogadas} voltarJogada={voltarJogada} />
-    </View>
+    </View >
   )
 }
 
@@ -97,11 +95,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     flexDirection: 'column',
   },
-
   tabuleiro: {
     flexDirection: 'column',
     justifyContent: 'center',
-    flex: 5,
+    // flex: 1,
+    padding: 20,
+    aspectRatio: 1
   },
   linhaTabuleiro: {
     justifyContent: 'center',
