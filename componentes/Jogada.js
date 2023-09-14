@@ -1,44 +1,46 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 
 const Jogada = (props) => {
   const jogada = props.jogada;
 
   return (
-    <View style={styles.jogada} onClick={props.voltarJogada}>
-      <View style={styles.jogadaLinha}>
-        <View style={styles.jogadaCelula}>
-          <Text>{jogada[0]}</Text>
+    <TouchableHighlight style={styles.jogada} onPress={props.voltarJogada}>
+      <View>
+        <View style={styles.jogadaLinha}>
+          <View style={styles.jogadaCelula}>
+            <Text>{jogada[0]}</Text>
+          </View>
+          <View style={styles.jogadaCelula}>
+            <Text>{jogada[1]}</Text>
+          </View>
+          <View style={styles.jogadaCelula}>
+            <Text>{jogada[2]}</Text>
+          </View>
         </View>
-        <View style={styles.jogadaCelula}>
-          <Text>{jogada[1]}</Text>
+        <View style={styles.jogadaLinha}>
+          <View style={styles.jogadaCelula}>
+            <Text>{jogada[3]}</Text>
+          </View>
+          <View style={styles.jogadaCelula}>
+            <Text>{jogada[4]}</Text>
+          </View>
+          <View style={styles.jogadaCelula}>
+            <Text>{jogada[5]}</Text>
+          </View>
         </View>
-        <View style={styles.jogadaCelula}>
-          <Text>{jogada[2]}</Text>
+        <View style={styles.jogadaLinha}>
+          <View style={styles.jogadaCelula}>
+            <Text>{jogada[6]}</Text>
+          </View>
+          <View style={styles.jogadaCelula}>
+            <Text>{jogada[7]}</Text>
+          </View>
+          <View style={styles.jogadaCelula}>
+            <Text>{jogada[8]}</Text>
+          </View>
         </View>
       </View>
-      <View style={styles.jogadaLinha}>
-        <View style={styles.jogadaCelula}>
-          <Text>{jogada[3]}</Text>
-        </View>
-        <View style={styles.jogadaCelula}>
-          <Text>{jogada[4]}</Text>
-        </View>
-        <View style={styles.jogadaCelula}>
-          <Text>{jogada[5]}</Text>
-        </View>
-      </View>
-      <View style={styles.jogadaLinha}>
-        <View style={styles.jogadaCelula}>
-          <Text>{jogada[6]}</Text>
-        </View>
-        <View style={styles.jogadaCelula}>
-          <Text>{jogada[7]}</Text>
-        </View>
-        <View style={styles.jogadaCelula}>
-          <Text>{jogada[8]}</Text>
-        </View>
-      </View>
-    </View>
+    </TouchableHighlight>
   )
 }
 
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   jogadaText: {
-    
+
   }
 });
 

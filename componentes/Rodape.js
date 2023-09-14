@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import Jogada from './Jogada'
-import { View, Text, StyleSheet } from 'react-native';
-import { ScrollView } from 'react-native-web';
+import { View, ScrollView, Text, StyleSheet } from 'react-native';
 import { Orientation } from '../App';
 
 const Rodape = (props) => {
