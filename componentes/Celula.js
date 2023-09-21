@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     justifyCenter: 'center'
   },
   textCelula: {
-    fontSize: 100,
+    fontSize: 80,
     textAlign: 'center',
     color: '#000',
   }

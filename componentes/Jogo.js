@@ -59,7 +59,7 @@ const Jogo = () => {
   }
 
   return (
-    <View style={[styles.jogo, { flexDirection: isLandscape && 'row' }]}>
+    <View style={[styles.jogo, { flexDirection: isLandscape ? 'row' : 'column'}]}>
       <Cabecalho vez={vezJogador} />
       <View style={styles.tabuleiro}>
         <View style={styles.linhaTabuleiro}>
@@ -85,20 +85,16 @@ const Jogo = () => {
 
 const styles = StyleSheet.create({
   jogo: {
-    position: 'fixed',
-    top: 10,
-    right: 10,
-    left: 10,
-    bottom: 10,
+    margin: 10,
     backgroundColor: '#eee',
     borderWidth: 3,
     borderRadius: 10,
     flexDirection: 'column',
+    flex: 1
   },
   tabuleiro: {
     flexDirection: 'column',
     justifyContent: 'center',
-    // flex: 1,
     padding: 20,
     aspectRatio: 1
   },

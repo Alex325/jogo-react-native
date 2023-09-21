@@ -8,7 +8,7 @@ const Rodape = (props) => {
   const isLandscape = useContext(Orientation);
 
   const jogadas = props.historico.map(
-    (jogada, ind) => <Jogada jogada={jogada} voltarJogada={() => props.voltarJogada(ind)} />
+    (jogada, ind) => <Jogada jogada={jogada} key={ind} voltarJogada={() => props.voltarJogada(ind)} />
   )
 
   return (
